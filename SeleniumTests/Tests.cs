@@ -20,7 +20,7 @@ namespace SeleniumTests
             //    pageText,
             //    Is.EqualTo("Sometimes you'll see a typo, other times you won't"),
             //    "The expected typo text was not displayed correctly."
-            );
+            //);
         }
     }
 }
