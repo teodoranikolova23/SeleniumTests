@@ -1,7 +1,6 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium.Chrome;
 using SeleniumTests.Pages;
+using SeleniumTests.Seleinum.Core;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
@@ -11,6 +10,7 @@ namespace Tests
     {
         private ChromeDriver driver;
         protected HomePage HomePage;
+        protected TyposPage TyposPage;
 
         [SetUp]
         public void Setup()
@@ -19,13 +19,17 @@ namespace Tests
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/");
+
+            IBrowser browser = new Browser(driver);
+
+            HomePage = new HomePage(browser);
+            TyposPage = new TyposPage(browser);
         }
 
 
         [TearDown]
         public void TearDown()
         {
-            // NUnit1032: Ensure driver is disposed in [TearDown]
             driver?.Dispose();
         }
     }
