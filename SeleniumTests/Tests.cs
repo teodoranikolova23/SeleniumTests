@@ -9,6 +9,7 @@ namespace SeleniumTests
         [Test]
         public void TyposPage_ShouldDisplayExpectedText()
         {
+	    // test comment
             HomePage.Typos.Click();
             TyposPage.TyposMessage.Text.Contains("Sometimes you'll see a typo");
         }
