@@ -1,5 +1,4 @@
-﻿using AngleSharp.Dom;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumTests.Seleinum.Core;
 using IElement = SeleniumTests.Seleinum.Core.IElement;
 
