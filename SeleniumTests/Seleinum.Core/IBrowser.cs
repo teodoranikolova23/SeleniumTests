@@ -1,5 +1,4 @@
-﻿using AngleSharp.Dom;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System;
 
 namespace SeleniumTests.Seleinum.Core

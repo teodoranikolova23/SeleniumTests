@@ -1,8 +1,7 @@
 ﻿using OpenQA.Selenium.Chrome;
 using SeleniumTests.Pages;
 using SeleniumTests.Seleinum.Core;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
+
 
 namespace Tests
 {
@@ -15,7 +14,6 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            new DriverManager().SetUpDriver(new ChromeConfig());
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/");
