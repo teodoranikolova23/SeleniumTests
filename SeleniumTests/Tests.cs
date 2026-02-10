@@ -7,11 +7,22 @@ namespace SeleniumTests
     public class Tests : BaseTest
     {
         [Test]
-        public void TyposPage_ShouldDisplayExpectedText()
+        public void TyposPage_NavigateAndVerifyText()
         {
-	    // test comment
             HomePage.Typos.Click();
-            TyposPage.TyposMessage.Text.Contains("Sometimes you'll see a typo");
+            string actualText = TyposPage.TyposMessage.Text;
+
+            Assert.IsTrue(actualText.Contains("Sometimes you'll see a typo"),
+                $"Expected text to contain 'Sometimes you'll see a typo', but was: {actualText}");
+        }
+
+        [Test]
+        public void TyposPage_MessageShouldNotBeEmpty()
+        {
+            HomePage.Typos.Click();
+            string content = TyposPage.TyposMessage.Text;
+
+            Assert.IsNotEmpty(content, "The Typos message paragraph should not be empty.");
         }
     }
 }
